@@ -1,0 +1,463 @@
+@font-face {
+    font-family: 'IgraSans';
+    src: url(fonts/IgraSans.otf); 
+}
+body{
+    font-family: IgraSans;
+    font-size: 18px;
+    color:white;
+    background-color: rgb(170, 139, 199);
+    overflow: hidden;
+    
+}
+html, body{
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+  }
+  .main-section{
+    margin: 10px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .create{
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    height: 120px;
+    padding: 20px;
+    border: 1px solid rgb(108, 0, 196);
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px black;
+    margin: 10px;
+    max-width: 400px;
+    transition: transform 1s ease;
+  }
+  .hide{
+    transform: translateX(-110%);
+  }
+
+  .create button{
+    margin-top: 20px;
+  }
+.stroka{
+    width: 100%;
+    display: flex;
+  }
+.stroka input{
+    flex-grow: 1;
+    width: 0;
+    height: 25px;
+    border-radius: 5px;
+    border: none;
+    font-family: 'IgraSans';
+    box-shadow: 0px 0px 5px black;
+}
+.stroka input:focus{
+    outline: 2px solid rgb(85, 0, 155);
+
+}
+
+.switch{
+    position: relative;
+    z-index: 2;
+    transition: transform 1s ease;
+    width: 40px;
+    height: 40px;
+    margin-left: 10px ;
+}
+.switch-move{
+    transform: rotateY(180deg);
+}
+
+.removeR{
+    margin-left: 20px;
+}
+.uniqueItem{
+    margin-left: 20px;
+}
+
+
+  /*КНОПКИ (все)*/
+  button{
+    height: 30px;
+    font-family: 'IgraSans';
+    background: linear-gradient(to right, rgb(108, 108, 230), pink);
+    border: none;
+    box-shadow: 0px 0px 3px black;
+
+  }
+  button:active{
+    color: white;
+  }
+
+/*РУЛЕТКА*/
+.roulette-cont {
+    display: flex;
+    justify-content: center;
+  }
+
+.roulette{ 
+    width: 100px;
+    height: 120px;
+    border-left: 3px solid rgb(108, 0, 196);
+    border-right: 3px solid rgb(108, 0, 196);
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+
+}
+.item{
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    border-radius: 5px;
+    border-bottom: 5px solid blue;
+    box-shadow: 0 0px 4px 0px black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    word-break: break-all;
+    font-size: 12px;
+    padding: 10px;
+
+}
+.arrow{
+    position: absolute;
+    border: 2px solid yellow;
+    height: 100%;
+    left: 50%;
+}
+
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+  .open{
+    position: relative;
+    z-index: 3;
+}
+
+
+
+/*АНИМАЦИЯ ИСЧЕЗНОВЕНИЯ ЯЧЕЙКИ*/
+@keyframes Removing {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      display: none;
+    }
+  }
+
+  .fade-out {
+    animation: Removing 2s forwards;
+  }
+
+
+/*ШАПКА И НАВИГАЦИЯ*/
+header{
+    width: 100%;
+    height: 90px;
+    background-color: rgb(108, 0, 196);
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    box-shadow: 0px 5px 35px -10px black;
+    
+  }
+
+.nav-item{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+
+}
+
+.link-list{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style-type: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    z-index: 3;
+}
+
+.navigation{
+    width: 70%;
+}
+
+
+/*ЛОГОТИП*/
+.logo-cont{
+    overflow: hidden;
+    padding-right: 50px;
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.inner-logo-cont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+}
+.logo{
+    opacity: 0.5;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    margin: 0;
+    box-shadow: 0px 0px 5px black;
+  }
+  .fire
+  {
+    width: 100px;
+    height: 100px;
+    padding: 0;
+    z-index: 2;
+  }
+  h3{
+    text-shadow: 0px -10px 12px rgb(255, 17, 0), 0px 5px 4px rgb(255, 17, 0);
+    margin: 0;
+    z-index: 2;
+    position: absolute;
+
+  }
+
+
+/*СНЕЖОК*/
+.snow{
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100vh;
+}
+
+@keyframes snowFalling{
+    0%{
+        top: -50px;
+        opacity: 1;
+        transform:rotateZ(0deg)
+    }
+    100%{
+        top: 100vh;
+        opacity: 0.1;
+        transform:rotateZ(360deg)
+    }
+}
+
+.falling {
+    width: 5px;
+    height: 5px;
+    background-color: white;
+    position: absolute;
+    animation-name: snowFalling;
+    animation-duration: 15s;
+    animation-fill-mode: linear;
+  }
+
+
+/*МОДАЛЬНОЕ ОКНО*/
+.modalWindow{
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: start;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.open-item{
+    display: none;
+    background-color: rgb(198, 175, 219);
+    width: 350px;
+    height: 280px;
+    position: absolute;
+    border-radius: 25px;
+    top: 15%;
+    box-shadow: 0px 0px 20px rgb(198, 175, 219);
+    justify-content: center;
+    align-items: end;
+}
+
+.close-btn{
+    margin-bottom: 30px;    
+}
+.text{
+    position: absolute;
+    bottom: 50%;
+}
+
+
+
+.open-state-for-parent{
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 4;
+}
+.open-state-for-child{
+    display: flex;
+    z-index: 4;
+}
+
+
+/*Птичка*/
+@keyframes birdFly{
+    0%{
+        background-image: url("sprites/sprite4.png");
+    }
+    25%{
+        background-image: url("sprites/sprite1.png");
+    }
+    50%{
+        background-image: url("sprites/sprite2.png");
+    }
+    75%{
+        background-image: url("sprites/sprite3.png");
+    }
+    100%{
+        background-image: url("sprites/sprite4.png");
+    }
+}
+
+@keyframes birdMove{
+    0%{
+        transform:translateX(-40px) scaleX(1);
+    }
+    49%{
+        transform: translateX(1406px) scaleX(1);
+    }
+    50%{
+        transform: translateX(1406px)  scaleX(-1);
+    }
+    99%{
+        transform: translateX(-40px) scaleX(-1);
+    }
+    100%{
+        transform:translateX(-40px) scaleX(-1);
+    }
+}
+
+.bird{
+    position: relative;
+    z-index: 3;
+    width: 70px;
+    height: 45px;
+    background-image: url("sprites/sprite1.png");
+    background-size: 70px 45px;
+    animation: birdMove 40s infinite, birdFly 1s infinite;
+
+}
+
+
+
+/*ПОДВАЛ*/
+.podval{
+    width: 100%;
+    height: 50px;
+    background-color: rgb(108, 0, 196);
+    margin: 0;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+.podval p{
+    font-size: 16px;
+    margin: 0;
+}
+.git_link{
+    margin-left: 5%;
+}
+/*ДЛЯ АДАПТАЦИИ*/
+@media(max-width: 450px) {
+
+    h4{
+        margin-top: 10px;
+        font-weight: 100px;
+    }
+    .logo-cont{
+        flex-direction: column;
+    }
+    .podval p{
+        font-size: 13px;
+    }
+    .bird{
+        animation: birdMove 15s infinite, birdFly 1s infinite;
+    
+    }
+    @keyframes birdMove{
+        0%{
+            transform:translateX(-80px) scaleX(1);
+        }
+        49%{
+            transform: translateX(450px) scaleX(1);
+        }
+        50%{
+            transform: translateX(420px)  scaleX(-1);
+        }
+        99%{
+            transform: translateX(-80px) scaleX(-1);
+        }
+        100%{
+            transform:translateX(-80px) scaleX(-1);
+        }
+    }
+
+}
+@media(min-width: 1000px)
+{
+    .open-item{
+        width: 500px;
+        height: 380px;
+    }
+    .logo{
+        width: 400px;
+        height: 400px;
+
+    }
+}
+@media(min-width: 1920px)
+{
+    .open-item{
+        width: 700px;
+        height: 580px;
+    }
+    header{
+        height: 100px;
+    }
+    .logo{
+        top: 100px;
+        position: relative;
+        width: 650px;
+        height: 650px;
+
+    }
+}
